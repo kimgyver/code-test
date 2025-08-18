@@ -1,0 +1,14 @@
+/Users/jinyoungkim/net-repo/code-test/obj/Debug/net8.0/code-test.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jinyoungkim/net-repo/code-test/obj/Debug/net8.0/code-test.AssemblyInfoInputs.cache
+/Users/jinyoungkim/net-repo/code-test/obj/Debug/net8.0/code-test.AssemblyInfo.cs
+/Users/jinyoungkim/net-repo/code-test/obj/Debug/net8.0/code-test.csproj.CoreCompileInputs.cache
+/Users/jinyoungkim/net-repo/code-test/bin/Debug/net8.0/code-test
+/Users/jinyoungkim/net-repo/code-test/bin/Debug/net8.0/code-test.deps.json
+/Users/jinyoungkim/net-repo/code-test/bin/Debug/net8.0/code-test.runtimeconfig.json
+/Users/jinyoungkim/net-repo/code-test/bin/Debug/net8.0/code-test.dll
+/Users/jinyoungkim/net-repo/code-test/bin/Debug/net8.0/code-test.pdb
+/Users/jinyoungkim/net-repo/code-test/obj/Debug/net8.0/code-test.dll
+/Users/jinyoungkim/net-repo/code-test/obj/Debug/net8.0/refint/code-test.dll
+/Users/jinyoungkim/net-repo/code-test/obj/Debug/net8.0/code-test.pdb
+/Users/jinyoungkim/net-repo/code-test/obj/Debug/net8.0/code-test.genruntimeconfig.cache
+/Users/jinyoungkim/net-repo/code-test/obj/Debug/net8.0/ref/code-test.dll
