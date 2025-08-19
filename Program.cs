@@ -335,7 +335,7 @@ static string GetCharacterCount(string input)
   foreach (var key in charCount.Keys)
   {
     // sb.Append(Convert.ToChar(key) + charCount[key]);
-    sb.Append($"{key}").Append(charCount[key]);
+    sb.Append(key).Append(charCount[key]);
   }
   return sb.ToString();
 
@@ -621,10 +621,18 @@ static string ReverseVowels(string s)
   const string Vowels = "AEIOUaeiou";
 
   var stack = new Stack<char>();
-  s.ToCharArray()
-      .Where(c => Vowels.Contains(c))
-      .ToList()
-      .ForEach(c => stack.Push(c));
+  // s.ToCharArray()
+  //     .Where(c => Vowels.Contains(c))
+  //     .ToList()
+  //     .ForEach(c => stack.Push(c));
+
+  foreach (var c in s)
+  {
+    if (Vowels.Contains(c))
+    {
+      stack.Push(c);
+    }
+  }
 
   // iterate string
   // if char is vowel, replace the last vowel of collected vowels

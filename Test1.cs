@@ -203,6 +203,10 @@ public class Test1
       }
       else if (pairs.ContainsValue(c))
       {
+        if (stack.Count == 0)
+        {
+          return false; // 닫는 괄호가 먼저 나옴
+        }
         char popped = stack.Pop();
         char key = pairs.FirstOrDefault(x => x.Value == c).Key;
         if (popped != key)

@@ -17,7 +17,7 @@ class TestBracketsValid
         if (stack.Count == 0 || stack.Pop() != map[c])
           return false;
       }
-      else // 여는 괄호
+      else if (map.ContainsValue(c)) // 여는 괄호
       {
         stack.Push(c);
       }
