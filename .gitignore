@@ -1,0 +1,32 @@
+# Build results
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code settings
+.vscode/
+
+# Mac system files
+.DS_Store
+
+# Logs
+*.log
+
+# NuGet packages
+*.nupkg
+packages/
+.nuget/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Test results

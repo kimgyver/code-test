@@ -9,6 +9,11 @@ using code_test;
 // LogReader.Main();
 // return;
 
+TestCharacterDiff.Main();
+
+Test3.Main();
+return;
+
 
 TestBalanceChecker.Main();
 return;

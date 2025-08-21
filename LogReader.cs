@@ -69,7 +69,7 @@ public class LogReader
   // Summary report logic separated for testability
   public static LogSummary GetSummary(IEnumerable<LogEntry> logs)
   {
-    var logList = logs as IList<LogEntry> ?? logs.ToList();
+    var logList = logs as List<LogEntry> ?? logs.ToList();
 
     var requestsPerUser = logList
       .GroupBy(l => l.UserId)
