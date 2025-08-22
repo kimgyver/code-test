@@ -16,7 +16,7 @@ public class TestTopKFrequent
                 .Select(x => x.Key);
   }
 
-  public static void Main()
+  public static void RunTest()
   {
     var topKFrequent = new TestTopKFrequent();
     var nums = new int[] { 1, 1, 1, 2, 2, 3, 3, 3, 4 };

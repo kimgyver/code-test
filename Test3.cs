@@ -80,17 +80,17 @@ public class Test3
   public class TreeNode
   {
     public int val;
-    public TreeNode left;
-    public TreeNode right;
+    public TreeNode? left;
+    public TreeNode? right;
 
-    public TreeNode(int value, TreeNode left = null, TreeNode right = null)
+    public TreeNode(int value, TreeNode? left = null, TreeNode? right = null)
     {
       val = value;
       this.left = left;
       this.right = right;
     }
 
-    public static bool ValidateBST(TreeNode node, int min = int.MinValue, int max = int.MaxValue)
+    public static bool ValidateBST(TreeNode? node, int min = int.MinValue, int max = int.MaxValue)
     {
       if (node == null) return true;
 
@@ -104,7 +104,7 @@ public class Test3
     }
   }
 
-  public static void Main()
+  public static void RunTest()
   {
     // Test FindMissingNumber
     int[] numbers = { 1, 2, 4, 5 };

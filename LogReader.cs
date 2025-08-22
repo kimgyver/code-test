@@ -3,8 +3,8 @@ using System.Globalization;
 public class LogEntry
 {
   public DateTime Timestamp { get; set; }
-  public string UserId { get; set; }
-  public string Endpoint { get; set; }
+  public string? UserId { get; set; }
+  public string? Endpoint { get; set; }
   public int StatusCode { get; set; }
 }
 
@@ -72,11 +72,11 @@ public class LogReader
     var logList = logs as List<LogEntry> ?? logs.ToList();
 
     var requestsPerUser = logList
-      .GroupBy(l => l.UserId)
+      .GroupBy(l => l.UserId ?? "")
       .ToDictionary(g => g.Key, g => g.Count());
 
     var endpointGroup = logList
-      .GroupBy(l => l.Endpoint)
+      .GroupBy(l => l.Endpoint ?? "")
       .OrderByDescending(g => g.Count())
       .FirstOrDefault();
 
@@ -95,7 +95,7 @@ public class LogReader
     };
   }
 
-  static public void Main()
+  static public void RunTest()
   {
     string logString = """
 2025-08-12T10:15:00Z, user1, /login, 200
@@ -132,8 +132,8 @@ public class LogReader
 public class LogSummary
 {
   public int TotalRequests { get; set; }
-  public Dictionary<string, int> RequestsPerUser { get; set; }
-  public string MostHitEndpoint { get; set; }
+  public Dictionary<string, int> RequestsPerUser { get; set; } = new();
+  public string? MostHitEndpoint { get; set; }
   public int MostHitEndpointCount { get; set; }
   public int FailedRequestsCount { get; set; }
 }

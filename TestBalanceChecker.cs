@@ -13,12 +13,12 @@
 public class Trnsction
 {
   public decimal amount { get; set; }
-  public string type { get; set; }
+  public string? type { get; set; }
 }
 
 public class TestBalanceChecker
 {
-  public static void Main()
+  public static void RunTest()
   {
     var transactions = new List<Trnsction>
         {

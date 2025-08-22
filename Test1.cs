@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 public class Test1
 {
-  public static void Main()
+  public static void RunTest()
   {
     Console.WriteLine("Hello World");
     var result1 = MostFrequentWord("this is a test this is only a test");

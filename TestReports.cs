@@ -2,7 +2,7 @@ using System.Text.Json;
 
 public class TestReports
 {
-  public static void Main()
+  public static void RunTest()
   {
     var transactionsJson = """
     [
@@ -11,7 +11,7 @@ public class TestReports
       {"date": "2025-07-02", "amount": 100.0, "type": "credit"}
     ]
     """;
-    var transactions = JsonSerializer.Deserialize<List<Transaction>>(transactionsJson);
+    var transactions = JsonSerializer.Deserialize<List<Transaction>>(transactionsJson) ?? new List<Transaction>();
     var dailyBalance = transactions
       .GroupBy(t => t.date)
       .Select(g => new { Date = g.Key, Balance = g.Sum(t => t.type == "credit" ? t.amount : -t.amount) })
@@ -27,7 +27,8 @@ public class TestReports
         {"id": "INV-003", "customer": "Globex", "amount": 150.0, "status": "paid"}
       ]
     """;
-    var paidInvoices = JsonSerializer.Deserialize<List<Invoice>>(invoicesJson)
+    var paidInvoices = JsonSerializer.Deserialize<List<Invoice>>(invoicesJson) ?? new List<Invoice>();
+    var paidInvoicesSummary = paidInvoices
       .Where(i => i.status == "paid")
       .Select(i => new { i.customer, totalPaid = i.amount })
       .ToList();
@@ -42,7 +43,7 @@ public class TestReports
         {"accountId": "A1", "amount": 300.0, "timestamp": "2025-07-22T12:00:00Z"}
       ]
     """;
-    var accounts = JsonSerializer.Deserialize<List<Account>>(accountsJson);
+    var accounts = JsonSerializer.Deserialize<List<Account>>(accountsJson) ?? new List<Account>();
     var balances = accounts
       .GroupBy(a => a.accountId)
       .Select(g => new { AccountId = g.Key, Balance = g.Sum(a => a.amount) })
@@ -65,7 +66,7 @@ public class TestReports
         {"userId": "U3", "plan": "pro", "amount": 50.0, "timestamp": "2025-07-22T12:00:00Z"}
       ]
       """;
-    var billings = JsonSerializer.Deserialize<List<Billing>>(billingsJson);
+    var billings = JsonSerializer.Deserialize<List<Billing>>(billingsJson) ?? new List<Billing>();
     var totalBilling = billings
       .GroupBy(b => b.plan)
       .Select(g => new { Plan = g.Key, Total = g.Sum(b => b.amount) })
@@ -90,7 +91,7 @@ public class TestReports
         {"ticketId": "T3", "status": "open", "priority": "medium"}
       ]
       """;
-    var ticketsStats = JsonSerializer.Deserialize<List<TicketStats>>(ticketsStatsJson);
+    var ticketsStats = JsonSerializer.Deserialize<List<TicketStats>>(ticketsStatsJson) ?? new List<TicketStats>();
     var statusCounts = ticketsStats
       .GroupBy(t => t.status)
       .Select(g => new { Status = g.Key, Count = g.Count() })
@@ -112,37 +113,37 @@ public class TestReports
 
 public class Transaction
 {
-  public string date { get; set; }
+  public string? date { get; set; }
   public double amount { get; set; }
-  public string type { get; set; }
+  public string? type { get; set; }
 }
 
 public class Invoice
 {
-  public string id { get; set; }
-  public string customer { get; set; }
+  public string? id { get; set; }
+  public string? customer { get; set; }
   public double amount { get; set; }
-  public string status { get; set; }
+  public string? status { get; set; }
 }
 
 public class Account
 {
-  public string accountId { get; set; }
+  public string? accountId { get; set; }
   public double amount { get; set; }
-  public string timestamp { get; set; }
+  public string? timestamp { get; set; }
 }
 
 public class Billing
 {
-  public string userId { get; set; }
-  public string plan { get; set; }
+  public string? userId { get; set; }
+  public string? plan { get; set; }
   public double amount { get; set; }
-  public string timestamp { get; set; }
+  public string? timestamp { get; set; }
 }
 
 public class TicketStats
 {
-  public string ticketId { get; set; }
-  public string status { get; set; }
-  public string priority { get; set; }
+  public string? ticketId { get; set; }
+  public string? status { get; set; }
+  public string? priority { get; set; }
 }

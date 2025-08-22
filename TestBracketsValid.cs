@@ -27,7 +27,7 @@ class TestBracketsValid
   }
 
 
-  public static void Main()
+  public static void RunTest()
   {
     Console.WriteLine("=====================================");
 

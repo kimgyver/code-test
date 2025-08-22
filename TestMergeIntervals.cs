@@ -7,7 +7,7 @@ public class TestMergeIntervals
     if (intervals.Count == 0) return new List<int[]>();
 
     // 시작점 기준 정렬
-    intervals.Sort((a, b) => a[0].CompareTo(b[0]));
+    intervals.Sort((a, b) => a[0] - b[0]);
     Console.WriteLine("Sorted Intervals:");
     Console.WriteLine(JsonSerializer.Serialize(intervals));
 
@@ -41,7 +41,7 @@ public class TestMergeIntervals
   }
 
 
-  public static void Main()
+  public static void RunTest()
   {
     var intervals = new List<int[]> {
       new int[]{1,3},

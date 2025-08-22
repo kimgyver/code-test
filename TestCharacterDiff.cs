@@ -44,7 +44,7 @@ public class TestCharacterDiff
     return true;
   }
 
-  public static void Main()
+  public static void RunTest()
   {
     Console.WriteLine(Have1DifferentCharacter("abc", "abd")); // true
     Console.WriteLine(Have1DifferentCharacter("abc", "ab")); // false
